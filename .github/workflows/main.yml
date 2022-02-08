@@ -36,18 +36,24 @@ jobs:
       - name: Publishes .NET core Project
         run: dotnet publish ./practice/practice.csproj -c Release -o release --nologo
         
+         # changes the base-tag in index.html from '/' to 'keyboards' to match GitHub Pages repository subdirectory      
+      - name: change base-tag in the index from '/' to '<nameofrepository>' to match github pages subdirectory
+        run:  sed -i 's/<base href="\/" \/>/<base href="\/keyboards\/" \/>/g' release/wwwroot/index.html
+        
+      # copy index.html to 404.html to serve the same file when a file is not found
+      - name: copy index.html to 404.html
+        run: cp release/wwwroot/index.html release/wwwroot/404.htm
+        
+         # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
+        
       - name: Commit wwwroot to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
            branch: gh-pages
            folder: release/wwwroot
-           
-      - name: change base-tag in the index from '/' to '<nameofrepository>' to match github pages subdirectory
-        run:  sed -i 's/<base href="\/" \/>/<base href="\/keyboards\/" \/>/g' release/wwwroot/index.html
-        
-         # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
-      - name: Add .nojekyll file
-        run: touch release/wwwroot/.nojekyll
+    
         
         
        
