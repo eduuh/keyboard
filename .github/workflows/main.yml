@@ -36,9 +36,20 @@ jobs:
       - name: Publishes .NET core Project
         run: dotnet publish ./practice/practice.csproj -c Release -o release --nologo
         
-         # changes the base-tag in index.html from '/' to 'keyboards' to match GitHub Pages repository subdirectory      
-      - name: change base-tag in the index from '/' to '<nameofrepository>' to match github pages subdirectory
-        run:  sed -i 's/<base href="\/" \/>/<base href="\/keyboards\/" \/>/g' release/wwwroot/index.html
+      # Use NodeJS react-snap utitility to prerender static website
+      - name: prerender Blazor client
+        working-directory: Prerender
+        run: npx react-snap
+        
+           # change base tag in all html files to include subfolder
+      - name: Change base tag
+        working-directory: Prerender/output/wwwroot
+        run: |
+           find . -name "*.html" | while read htmlFile; do
+            sed -i 's/<base href="\/"/<base href="\/BlazorWasmPrerender\/"/g' $htmlFile
+            sed -i 's/<script type="text\/javascript">var Module; window.__wasmmodulecallback__(); delete window.__wasmmodulecallback__;<\/script><script src="_framework\/dotnet.5.0.1.js" defer="" integrity="sha256-SWZOE2EsCqc\/7dPgJrcFqUvVvdeJ9cipeZ2NFMC9v2s=" crossorigin="anonymous"><\/script>//g' $htmlFile
+           done
+ 
         
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html
