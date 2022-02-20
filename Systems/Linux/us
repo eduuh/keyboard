@@ -776,7 +776,7 @@ xkb_symbols "colemak" {
 	key <AD03> { [U0066, U0046, U003C, U003C, U003C, U003C, U003C, U003C] };
 	key <AD04> { [U0070, U0050, U003E, U003E, U003E, U003E, U003E, U003E] };
 	key <AD05> { [U0067, U0047, U005E, U005E, U005E, U005E, U005E, U005E] };
-	key <AD06> { [Page_Up, Page_Up, Page_Up, Page_Up, Page_Up, Page_Up, Page_Up, Page_Up] };
+	key <AD06> { [U007D, U007D, U007D, U007D, U007D, U007D, U007D, U007D] };
 	key <AD07> { [U006A, U004A, U002B, U002B, U002B, U002B, U002B, U002B] };
 	key <AD08> { [U006C, U004C, U0034, VoidSymbol, VoidSymbol, VoidSymbol, VoidSymbol, VoidSymbol] };
 	key <AD09> { [U0075, U0055, U0035, Up, Up, Up, Up, Up] };
@@ -788,7 +788,7 @@ xkb_symbols "colemak" {
 	key <AC03> { [U0073, U0053, Home, Home, Home, Home, Home, Home] };
 	key <AC04> { [U0074, U0054, End, End, End, End, End, End] };
 	key <AC05> { [U0064, U0044, Delete, Delete, Delete, Delete, Delete, Delete] };
-	key <AC06> { [Page_Down, Page_Down, Page_Down, Page_Down, Page_Down, Page_Down, Page_Down, Page_Down] };
+	key <AC06> { [U007B, U007B, U007B, U007B, U007B, U007B, U007B, U007B] };
 	key <AC07> { [U006B, U004B, U002D, U002D, U002D, U002D, U002D, U002D] };
 	key <AC08> { [U006E, U004E, U0031, Left, Left, Left, Left, Left] };
 	key <AC09> { [U0065, U0045, U0032, Down, Down, Down, Down, Down] };
