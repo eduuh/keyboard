@@ -1,3 +1,5 @@
+#SingleInstance Force
+
 LAlt & i::Send, {3}
 LAlt & e::Send, {2}
 
@@ -31,13 +33,4 @@ RAlt & u::Send, {Up}
 RAlt & o::Send, {Enter}
 
 
-RAlt & q::Send, {@}
-RAlt & w::Send, {~} 
-RAlt & p::Send, {>} 
-RAlt & f::Send, {<} 
-RAlt & g::Send, {^}
-
-RAlt & x::Send, {×} 
-RAlt & c::Send, {`} 
-RAlt & b::Send, {&}  
-RAlt & v::Send, {|}  
+ 
