@@ -67,7 +67,6 @@ xkb_symbols "euro" {
     include "level3(ralt_switch)"
 };
 
-
 partial alphanumeric_keys
 xkb_symbols "ibm238l" {
 
@@ -832,10 +831,9 @@ xkb_symbols "colemak" {
 	key <TAB> { [Tab, Tab, Tab, Tab, Tab, Tab, Alt_R, Alt_R] };
 	key <BKSL> { [U003D, U003D, U003D, U003D, U003D, U003D, U003D, U003D] };
 	key <SPCE> { [space, space, space, space, space, space, space, space] };
-	include "level3(lalt_switch)" 
-	include "level5(ralt_switch)" 
-}; 
-
+	include "level3(lalt_switch)"
+	include "level5(ralt_switch)"
+};
 
 // I do NOT like dead-keys - the International keyboard as defined by Microsoft
 // does not fit my needs. Why use two keystrokes for all simple characters (eg '
@@ -1790,7 +1788,6 @@ xkb_symbols "crd" {
   include "compose(rctrl)"
 };
 
-
 partial alphanumeric_keys
 	xkb_symbols "sun_type6" {
 	include "sun_vndr/us(sun_type6)"
@@ -1876,7 +1873,6 @@ xkb_symbols "3l-cros" {
         symbols[Group1] = [ Tab ]
     };
 };
-
 
 // Drix EU Latin - version 3.1 (2019-10-07)
 // Author: Jerome Leclanche <jerome@leclan.ch>
