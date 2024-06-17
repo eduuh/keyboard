@@ -13,11 +13,9 @@ if [ -f "$KEYBOARD" ]; then
 echo "Creating a new backup file"
 sudo mv  /usr/share/X11/xkb/symbols/us $KEYBOARD
 
-ARCH=/usr/share/X11/xkb/symbols/us
-
 if [ -f "$KEYBOARD" ]; then
    echo "Removing existing hard link"
 fi
 
 echo "Creating a new hard Link"
-sudo ln ./Arch/us $ARCH
+sudo ln ./Systems/Linux/us /usr/share/X11/xkb/symbols/us
